@@ -25,7 +25,6 @@ const HomeScreen = ({Navigation}) => {
   return (
    
     <SafeAreaView style={{ flex: 1 }}>
-      
        <Text>
         Your are in Homepage
        </Text>
@@ -35,6 +34,7 @@ const HomeScreen = ({Navigation}) => {
 }
 
 
+  
 /*-------------------------------------------------------------*/
 /*STYLES*/
 /*-------------------------------------------------------------*/

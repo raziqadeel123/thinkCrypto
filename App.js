@@ -36,7 +36,27 @@ const HomeStack = () => {
   );
 };
 
+const CryptoListScreen = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="cryptos"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="cryptos" component={ListScreen} />
+    </Stack.Navigator>
+  );
+};
 
+const WalletsScreen = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Wallet"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="wallet" component={WalletScreen} />
+    </Stack.Navigator>
+  );
+};
 
 function App() {
   return (
@@ -44,7 +64,7 @@ function App() {
       <Tab.Navigator
         initialRouteName="Feed"
         screenOptions={({ route }) => ({
-          headerStyle: { backgroundColor: "#e0e4e0"  },
+          headerStyle: { backgroundColor: "#e0e4e0" },
           headerTintColor: "#fff",
           headerTitleStyle: { fontWeight: "bold" },
           tabBarActiveTintColor: "#3d46d7",
@@ -53,7 +73,12 @@ function App() {
             let iconName;
             if (route.name === "HomeStack") {
               iconName = focused ? "home-account" : "home-account";
-            } 
+            } else if (route.name === "wallet") {
+              iconName = focused ? "wallet-outline" : "wallet-outline";
+            } else if (route.name === "cryptos") {
+              iconName = focused ? "bitcoin" : "bitcoin";
+            }
+
             return (
               <MaterialCommunityIcons
                 name={iconName}
@@ -73,6 +98,23 @@ function App() {
           }}
         />
 
+        <Tab.Screen
+          name="cryptos"
+          component={CryptoListScreen}
+          options={{
+            tabBarLabel: "",
+            title: "Cryptos",
+          }}
+        />
+
+        <Tab.Screen
+          name="wallet"
+          component={WalletsScreen}
+          options={{
+            tabBarLabel: "",
+            title: "Wallet",
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
