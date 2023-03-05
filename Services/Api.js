@@ -34,6 +34,29 @@ export const getMarketData= async () => {
     }
   };
 
+
+  export const getMarketChart = async (coinId) => {
+    try {
+      const res = await axios.get(
+        `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=chf&days=1&interval=hourly`
+      );
+      return res.data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
+  export  const getWatchListData = async (updatedCoinId) => {
+    try {
+      const response = await axios.get(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${updatedCoinId}&order=market_cap_desc&per_page=1&page=1&sparkline=false`
+      );
+         return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 /*-------------------------------------------------------------*/
 /*EXPORTS*/
 /*-------------------------------------------------------------*/
