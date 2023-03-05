@@ -12,7 +12,8 @@ import {
 } from "react-native";
 import * as React from "react";
 import { Button } from "react-native-paper";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation} from "@react-navigation/native";
+import Lottie from "lottie-react-native"
 
 /*-------------------------------------------------------------*/
 /*DECLARATION AND INITIALIZATION*/
@@ -28,7 +29,13 @@ const HomeScreen = ({ Navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        <Image style={styles.imagestyle} source={require("../assets/Images/HomeScreenImage.png")} />
+       {/*<Image style={styles.imagestyle} source={require("../assets/Images/HomeScreenImage.png")} />*/} 
+       <Lottie 
+        style={styles.imagestyle}
+        source={require("../assets/lottie/crypto-phone.json")}
+        autoPlay
+        loop
+       />
       </View>
       <TouchableOpacity
         onPress={() => navigation.navigate("cryptos")}
@@ -53,16 +60,20 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   container : {
-      height : 400,
+      marginTop: 50,
+   
+      height : 300,
       display : "flex",
       justifyContent: "center",
       alignItems : "center"
   },
   imagestyle: {
+    marginVertical : 10 ,
     flex: 1,
-    width: 300,
+    width: 250,
   },
   appButtonContainer: {
+    marginTop:50,
     marginHorizontal : 50,
     elevation: 8,
     backgroundColor: "#3d46d7",
