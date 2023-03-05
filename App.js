@@ -13,6 +13,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./pages/HomeScreen.js";
 import ListScreen from "./pages/ListScreen.js";
 import WalletScreen from "./pages/WalletScreen.js";
+import CoinDetails from "./pages/CoinDetails.js";
 
 /*-------------------------------------------------------------*/
 /*DECLARATION AND INITIALIZATION*/
@@ -58,6 +59,17 @@ const WalletsScreen = () => {
   );
 };
 
+const Coindetail = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="coindetails"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="coindetails" component={CoinDetails} />
+    </Stack.Navigator>
+  );
+};
+
 function App() {
   return (
     <NavigationContainer>
@@ -77,6 +89,8 @@ function App() {
               iconName = focused ? "wallet-outline" : "wallet-outline";
             } else if (route.name === "cryptos") {
               iconName = focused ? "bitcoin" : "bitcoin";
+            } else if (route.name === "coindetails") {
+              iconName = focused ? "chart-bar" : "chart-bar";
             }
 
             return (
@@ -104,6 +118,15 @@ function App() {
           options={{
             tabBarLabel: "",
             title: "Cryptos",
+          }}
+        />
+
+        <Tab.Screen
+          name="coindetails"
+          component={CoinDetails}
+          options={{
+            tabBarLabel: "",
+            title: "coin details",
           }}
         />
 

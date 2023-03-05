@@ -42,7 +42,8 @@ const Coin = ({ marketCoin }) => {
   return (
     <Pressable
       style={tw`flex flex-row p-3 border-b-2 border-gray-800`}
-      onPress={() => navigation.navigate("CoinDetails", { coinId: id })}
+          onPress={() => navigation.navigate("coindetails", { coinId: id } )}
+         
     >
       <Image
         style={tw`h-10 w-10 mr-4 self-center`}
@@ -50,7 +51,7 @@ const Coin = ({ marketCoin }) => {
           uri: image,
         }}
       />
-      <View> 
+      <View>
         <Text style={tw`text-black font-bold mb-2`}>{name}</Text>
         <View style={tw`flex flex-row`}>
           <View style={tw`bg-blue-100 px-1 rounded mr-2`}>
@@ -69,7 +70,7 @@ const Coin = ({ marketCoin }) => {
         </View>
       </View>
       <View style={tw`ml-auto items-end`}>
-        <Text style={tw`text-black mb-2`}>{millify(current_price)}</Text>
+        <Text style={tw`text-black mb-2`}>{current_price.toFixed(2)}</Text>
         <Text style={tw`text-black`}>MCap {millify(market_cap)}</Text>
       </View>
     </Pressable>
