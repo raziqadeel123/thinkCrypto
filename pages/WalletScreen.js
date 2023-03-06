@@ -2,7 +2,7 @@
 /*IMPORTS*/
 /*-------------------------------------------------------------*/
 
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity , Alert } from "react-native";
 import React from "react";
 import tw from "tailwind-react-native-classnames";
 import CarouselCards from "../Components/CarouselCards";
@@ -16,6 +16,55 @@ import CarouselCards from "../Components/CarouselCards";
 /*-------------------------------------------------------------*/
 
 const WalletScreen = ({ Navigation }) => {
+
+
+  // Buy and Sell alert function
+
+  const BuyAlert = () =>
+  Alert.alert(
+    'Buy Alert',
+    'Do your want to buy this Coin',
+    [
+      {
+        text: 'Cancel',
+        onPress: () => Alert.alert('Transition denied'),
+        style: 'cancel',
+      },
+      {text: 'Yes', onPress: () => Alert.alert('Congrate!')},
+    ],
+    {
+      cancelable: true,
+      onDismiss: () =>
+        Alert.alert(
+          'This alert was dismissed by tapping outside of the alert dialog.',
+        ),
+    },
+  );
+
+
+
+  const SellAlert = () =>
+  Alert.alert(
+    'Sell Alert',
+    'Do your want to Sell this Coin',
+    [
+      {
+        text: 'Cancel',
+        onPress: () => Alert.alert('Transition denied'),
+        style: 'cancel',
+      },
+      {text: 'Yes', onPress: () => Alert.alert('Congrate!')},
+    ],
+    {
+      cancelable: true,
+      onDismiss: () =>
+        Alert.alert(
+          'This alert was dismissed by tapping outside of the alert dialog.',
+        ),
+    },
+
+  )
+
   return (
     <View style={tw`px-3 mt-2`}>
       <Text style={tw`text-black font-bold mb-2`}>Total Balance</Text>
@@ -26,7 +75,7 @@ const WalletScreen = ({ Navigation }) => {
       </View>
       <View style={tw`flex justify-center	self-center flex-row`}>
         <TouchableOpacity
-          onPress={() => console.log("Buy")}
+          onPress={BuyAlert}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>
@@ -34,7 +83,7 @@ const WalletScreen = ({ Navigation }) => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Sell")}
+          onPress={SellAlert}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>
