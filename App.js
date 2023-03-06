@@ -32,7 +32,7 @@ const HomeStack = () => {
       initialRouteName="Home"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
     </Stack.Navigator>
   );
 };
@@ -43,7 +43,7 @@ const CryptoListScreen = () => {
       initialRouteName="cryptos"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="cryptos" component={ListScreen} />
+      <Stack.Screen name="cryptosScreen" component={ListScreen} />
     </Stack.Navigator>
   );
 };
@@ -54,7 +54,7 @@ const WalletsScreen = () => {
       initialRouteName="Wallet"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="wallet" component={WalletScreen} />
+      <Stack.Screen name="walletScreen" component={WalletScreen} />
     </Stack.Navigator>
   );
 };
@@ -65,7 +65,7 @@ const Coindetail = () => {
       initialRouteName="coindetails"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="coindetails" component={CoinDetails} />
+      <Stack.Screen name="coindetailsScreen" component={CoinDetails} />
     </Stack.Navigator>
   );
 };
@@ -77,7 +77,7 @@ function App() {
         initialRouteName="Feed"
         screenOptions={({ route }) => ({
           headerStyle: { backgroundColor: "#e0e4e0" },
-          headerTintColor: "#fff",
+          headerTintColor: "gray",
           headerTitleStyle: { fontWeight: "bold" },
           tabBarActiveTintColor: "#3d46d7",
           tabBarInactiveTintColor: "gray",
@@ -108,7 +108,7 @@ function App() {
           component={HomeStack}
           options={{
             tabBarLabel: "",
-            title: "home",
+            title: "Home",
           }}
         />
 
