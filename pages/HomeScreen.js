@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
   },
   container : {
       marginTop: 50,
-   
       height : 300,
       display : "flex",
       justifyContent: "center",

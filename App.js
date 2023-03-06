@@ -120,7 +120,6 @@ function App() {
             title: "Cryptos",
           }}
         />
-
         <Tab.Screen
           name="coindetails"
           component={CoinDetails}
