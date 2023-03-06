@@ -56,10 +56,10 @@ const CreditCardItems = ({ item, index })=> {
         width: 0,
         height: 3,
       },
-    paddingBottom : 20,
-    paddingTop: 20,
-    marginTop : 20,
-    marginRight: 20,
+    paddingBottom : 10,
+    paddingTop: 10,
+    marginTop : 10,
+    marginRight: 10,
       shadowOpacity: 0.29,
       shadowRadius: 4.65,
       marginHorizontal : 2,
@@ -67,7 +67,7 @@ const CreditCardItems = ({ item, index })=> {
     image: {
       marginVertical : 5,
       width: 320,
-      height:220,
+      height:180,
     },
     header: {
       color: "#222",
