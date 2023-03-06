@@ -2,8 +2,9 @@
 /*IMPORTS*/
 /*-------------------------------------------------------------*/
 
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import tw from "tailwind-react-native-classnames";
 
 
 /*-------------------------------------------------------------*/
@@ -14,19 +15,23 @@ import React from 'react'
 /*MAIN*/
 /*-------------------------------------------------------------*/
 
-const WalletScreen = ({Navigation}) => {
+const WalletScreen = ({ Navigation }) => {
+  const [index, setIndex] = React.useState(0)
+  const isCarousel = React.useRef(null)
+
   return (
-    <View>
-      <Text>you are in Wallet Screen</Text>
-    </View>
-  )
-}
+    <View style={tw`px-3 mt-2`}>
+      <Text style={tw`text-black font-bold mb-2`}>Total Balance</Text>
+      <Text style={tw`text-gray-400 text-2xl`}>CHF 1090.20</Text>
 
+    
 
+      </View>
+  );
+};
 
 /*-------------------------------------------------------------*/
 /*EXPORTS*/
 /*-------------------------------------------------------------*/
 
-
-export default WalletScreen
+export default WalletScreen;
