@@ -31,14 +31,14 @@ export default function CoinDetails() {
   const [chartData, setChatData] = useState("");
 
   const route = useRoute();
-  const id = route.params?.coinId;
+ // const id = route.params?.coinId;
 
   const getCoinInfo = async () => {
     setLoading(true);
-    const getCoinData = await getCoin(id);
-    const getCoinChart = await getMarketChart(id);
-    setData(getCoinData);
-    setChatData(getCoinChart);
+    //const getCoinData = await getCoin(id);
+   // const getCoinChart = await getMarketChart(id);
+   // setData(getCoinData);
+   // setChatData(getCoinChart);
     setLoading(false);
   };
 
@@ -51,7 +51,9 @@ export default function CoinDetails() {
   }
 
   const { name, symbol } = data;
-  const { prices } = chartData;
+ // const { prices } = chartData;
+
+   //   console.log(typeof prices[0] )
 
   //const price = chartData.prices
   // console.log(price)
@@ -74,25 +76,30 @@ export default function CoinDetails() {
 
       <LineChart
         data={{
-          labels: ["January", "February", "March", "April"],
+          labels: ["January", "Feb", "March", "April" , "March" , "June"],
           datasets: [
             {
-              data: [
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-              ],
+              data: 
+                  [ Math.random() * 10,
+                    Math.random() * 10,
+                    Math.random() * 10,
+                    Math.random() * 10,
+                    Math.random() * 10,
+                    Math.random() * 10,
+                    Math.random() * 10,
+                    Math.random() * 10,
+                  ]
+                  
+             ,
               smoothingStrategy: "bezier",
             },
           ],
         }}
-        width={Dimensions.get("window").width - 16} // from react-native
-        height={220}
-        yAxisLabel={"Rs"}
+        width={Dimensions.get("window").width -16 } // from react-native
+        height={260}
+        yAxisLabel={"CHF"}
         chartConfig={{
+          paddingLeft :20 ,
           backgroundColor: "#1cc910",
           backgroundGradientFrom: "#eff3ff",
           backgroundGradientTo: "#efefef",
@@ -104,13 +111,13 @@ export default function CoinDetails() {
         }}
         bezier
         style={{
-          marginVertical: 8,
+          marginVertical: 4,
           borderRadius: 16,
         }}
       ></LineChart>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("wallet", { coinId: id })}
+        onPress={() => navigation.navigate("wallet", {/* coinId: id */})}
         style={styles.appButtonContainer}
       >
         <Text style={styles.appButtonText}>Add to Wallet</Text>
