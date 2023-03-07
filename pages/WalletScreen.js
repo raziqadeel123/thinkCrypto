@@ -15,6 +15,7 @@ import React from "react";
 import tw from "tailwind-react-native-classnames";
 import CarouselCards from "../Components/CarouselCards";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import SMSModal from "../Modal/SMSModal";
 /*-------------------------------------------------------------*/
 /*DECLARATION AND INITIALIZATION*/
 /*-------------------------------------------------------------*/
@@ -116,11 +117,14 @@ const WalletScreen = ({ Navigation }) => {
         </View>
       </View>
 
+     
 
       <View style={tw`flex justify-center	self-center flex-row`}>
-        <TouchableOpacity onPress={BuyAlert} style={styles.appButtonContainer}>
+      {/* <TouchableOpacity onPress={BuyAlert} style={styles.appButtonContainer}>
           <Text style={styles.appButtonText}>Buy</Text>
-        </TouchableOpacity>
+  </TouchableOpacity> */}
+           <SMSModal/>
+
         <TouchableOpacity onPress={SellAlert} style={styles.appButtonContainer}>
           <Text style={styles.appButtonText}>Sell</Text>
         </TouchableOpacity>
